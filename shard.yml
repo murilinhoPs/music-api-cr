@@ -1,0 +1,16 @@
+name: api
+version: 0.1.0
+
+authors:
+  - Murilinho murilinhorps@gmail.com
+
+description: |
+  Short description of api
+
+dependencies:
+  kemal:
+    github: kemalcr/kemal
+
+development_dependencies:
+
+license: MIT

@@ -11,6 +11,6 @@ end
 
 req()
 
-post "/pessoas" do |env|
-  env.response.status_code = 201
-end
+# post "/pessoas" do |env|
+#   env.response.status_code = 201
+# end

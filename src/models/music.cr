@@ -4,16 +4,17 @@ require "json"
 struct Music
   include JSON::Serializable
 
-  getter id : String, name : String, artist : String, album : String | Nil, length : Float64
+  # @id : String = UUID.random.to_s
+  getter id : String = UUID.random.to_s, # ? default value
+    artist : String,
+    album : String | Nil,
+    length : Float64
+  property name : String,
+    favorite : Bool = false
 
   def initialize(@name, @artist, @length, *, @album = nil)
-    @id = UUID.random.to_s # change for DB_id
+    @id = UUID.random.to_s # todo: change when generating from DB
   end
-
-  # def initialize(pull : JSON::PullParser)
-
-  #   @id = UUID.random.to_s
-  # end
 
   def to_s : String
     "ID: #{id}\nName: #{name}\nArtist: #{artist}\nAlbum: #{album}\nDuration: #{length}"
